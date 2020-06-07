@@ -2,7 +2,7 @@
 layout: post
 title:  "Guideline of texture"
 description: An example post which shows how to customize texture.
-date:   2019-05-23 21:03:36 +0530
+date:   2020-06-07 13:01:39 +023
 categories: Javascript NodeJS
 ---
 # texture
