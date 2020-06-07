@@ -1,12 +1,17 @@
-**My personal blog, built with [texture template](https://github.com/thelehhman/texture)**
-
-<!-- # texture
+---
+layout: post
+title:  "Guideline of texture"
+description: An example post which shows how to customize texture.
+date:   2019-05-23 21:03:36 +0530
+categories: Javascript NodeJS
+---
+# texture
 
 A configurable jekyll theme for simply beautiful blogs.
 
 **Demo**: [thelehhman.com/texture](https://thelehhman.com/texture)
 
-![texture theme preview](./screen1.png)
+![texture theme preview](https://github.com/currybur/currybur.github.io/raw/master/screen1.png)
 
 
 ## Installation on Github Pages
@@ -65,7 +70,7 @@ texture:
 
 For example, the blue style looks like this:
 
-![texture theme blue](./screen2.png)
+![texture theme blue](https://github.com/currybur/currybur.github.io/raw/master/screen2.png)
 
 
 **Texture Picker**
@@ -150,4 +155,27 @@ If this project help you reduce time to develop, you can give me a cup of coffee
 The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
 ## More Themes
-[plainwhite](https://github.com/thelehhman/plainwhite-jekyll) -->
+[plainwhite](https://github.com/thelehhman/plainwhite-jekyll)
+
+## Inserting Code 
+```javascript
+const express = require('express')
+const app = express()
+ 
+app.get('/', function (req, res) {
+  res.send('Hello World')
+})
+ 
+app.listen(3000)
+```
+
+
+```scss
+body {
+	font-family: 'Nunito Sans', sans-serif;
+	line-height: 1.5em;
+	margin: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+```
