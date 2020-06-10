@@ -2,8 +2,20 @@
 layout: post
 title:  "Reviewing ML"
 description: Reviewing machine learning before quiz.
-date:   2020-06-10 14:06:41 +023
+date:   2020-06-09 14:06:41 +023
 ---
+<head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+
 # 考前抱佛脚之quiz大学习
 **考后：水了水了**
 ***
@@ -37,7 +49,7 @@ RNN：memory cell
 ## 距离
 > $D(A,B)=D(B,A)$
 > $D(A,A)=0$  
-> $D(A,B)=0\lrArr A=B$
+> $D(A,B)=0\lrarr A=B$
 > $D(A,B)\leq D(A,C)+D(C,B)$
 
 #### 衡量聚类好坏：内部/外部标准
@@ -49,7 +61,7 @@ RNN：memory cell
    1. 自上而下
    2. 自下而上
    
-###### 衡量cluster间距：
+##### 衡量cluster间距：
 1. Single link 最近两点
 2. Complete link 最远两点
 3. Centroid 中心两点
@@ -100,7 +112,7 @@ RNN：memory cell
 
 缺点：局限于二阶统计量（协方差），线性投影
 
-##### kernel PCA
+#### kernel PCA
 
 ### ICA
 独立和不相关

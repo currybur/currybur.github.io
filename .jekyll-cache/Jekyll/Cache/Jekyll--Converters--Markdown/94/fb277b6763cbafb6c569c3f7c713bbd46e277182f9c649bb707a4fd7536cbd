@@ -1,0 +1,162 @@
+I"	.<h1 id="texture">texture</h1>
+
+<p>A configurable jekyll theme for simply beautiful blogs.</p>
+
+<p><strong>Demo</strong>: <a href="https://thelehhman.com/texture">thelehhman.com/texture</a></p>
+
+<p><img src="https://github.com/currybur/currybur.github.io/raw/master/screen1.png" alt="texture theme preview" /></p>
+
+<h2 id="installation-on-github-pages">Installation on Github Pages</h2>
+
+<p>Add this line to your site’s <code class="language-plaintext highlighter-rouge">_config.yml</code>:</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">remote_theme</span><span class="pi">:</span> <span class="s">thelehhman/texture</span>
+</code></pre></div></div>
+
+<p><strong>NOTE: If you are forking this repo, remove <code class="language-plaintext highlighter-rouge">base_url: /texture</code> in the <code class="language-plaintext highlighter-rouge">_config.yml</code> which is required to load the required website assets</strong></p>
+<h2 id="installation">Installation</h2>
+
+<p>Add this line to your Jekyll site’s <code class="language-plaintext highlighter-rouge">Gemfile</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gem</span> <span class="s2">"texture"</span>
+</code></pre></div></div>
+
+<p>And add this line to your Jekyll site’s <code class="language-plaintext highlighter-rouge">_config.yml</code>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">theme</span><span class="pi">:</span> <span class="s">texture</span>
+</code></pre></div></div>
+
+<p>And then execute:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ bundle
+</code></pre></div></div>
+
+<p>Or install it yourself as:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ gem install texture
+</code></pre></div></div>
+
+<h2 id="usage">Usage</h2>
+
+<p>The “texture” key in _config.yml is used to customize the theme data.</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">texture</span><span class="pi">:</span>
+  <span class="na">title</span><span class="pi">:</span> <span class="s">Adam Denisov</span>
+  <span class="na">tagline</span><span class="pi">:</span> <span class="s">Developer. Designer</span>
+  <span class="na">date_format</span><span class="pi">:</span> <span class="s2">"</span><span class="s">%b</span><span class="nv"> </span><span class="s">%-d,</span><span class="nv"> </span><span class="s">%Y"</span>
+
+  <span class="na">social_links</span><span class="pi">:</span>
+    <span class="na">twitter</span><span class="pi">:</span> <span class="s">thelehhman</span>
+    <span class="na">github</span><span class="pi">:</span>  <span class="s">thelehhman</span>
+    <span class="na">linkedIn</span><span class="pi">:</span> <span class="s">in/thelehhman</span> <span class="c1"># format: locale/username</span>
+</code></pre></div></div>
+
+<p><strong>Styling</strong></p>
+
+<p>Multiple header styles are supported using the “style” property under texture in <code class="language-plaintext highlighter-rouge">_config.yml</code>.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">texture</span><span class="pi">:</span>
+  <span class="na">style</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">yellow|red|black|blue|green|purple</span><span class="pi">]</span>
+</code></pre></div></div>
+
+<p>For example, the blue style looks like this:</p>
+
+<p><img src="https://github.com/currybur/currybur.github.io/raw/master/screen2.png" alt="texture theme blue" /></p>
+
+<p><strong>Texture Picker</strong></p>
+
+<p>You can toggle the texture picker to show/experiment various textures on your site using the showPicker variable. Remember to make it <code class="language-plaintext highlighter-rouge">false</code> for production.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">texture</span><span class="pi">:</span>
+  <span class="na">showPicker</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">false|true</span><span class="pi">]</span> <span class="c1"># show the texture selector(development purposes)</span>
+</code></pre></div></div>
+
+<p><strong>Comments (Disqus)</strong></p>
+
+<p>Comments on posts can be enabled by specifying your disqus_shortname under texture in <code class="language-plaintext highlighter-rouge">_config.yml</code>. For example,</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">texture</span><span class="pi">:</span>
+  <span class="na">disqus_shortname</span><span class="pi">:</span> <span class="s">games</span>
+</code></pre></div></div>
+
+<p><strong>Google Analytics</strong></p>
+
+<p>It can be enabled by specifying your analytics id under texture in <code class="language-plaintext highlighter-rouge">_config.yml</code></p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">texture</span><span class="pi">:</span>
+  <span class="na">analytics_id</span><span class="pi">:</span> <span class="s1">'</span><span class="s">&lt;</span><span class="nv"> </span><span class="s">YOUR</span><span class="nv"> </span><span class="s">ID</span><span class="nv"> </span><span class="s">&gt;'</span>
+</code></pre></div></div>
+
+<p><strong>Excerpts</strong></p>
+
+<p>Excerpts can be enabled by adding the following line to your <code class="language-plaintext highlighter-rouge">_config.yml</code></p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">show_excerpts</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p><strong>Toggle Navbar</strong></p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">texture</span><span class="pi">:</span>
+  <span class="na">showNav</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p><strong>Navigation</strong></p>
+
+<p>After setting <code class="language-plaintext highlighter-rouge">showNav</code> to true navigation can be built by adding the following to your <code class="language-plaintext highlighter-rouge">_config.yml</code></p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">texture</span><span class="pi">:</span>
+  <span class="na">navigation</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">My Work</span>
+      <span class="na">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/my-work"</span>
+    <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Resume</span>
+      <span class="na">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/resume"</span>
+</code></pre></div></div>
+
+<p><strong>Layouts</strong></p>
+
+<ul>
+  <li>Home</li>
+  <li>Page</li>
+  <li>Post</li>
+</ul>
+
+<h2 id="contributing">Contributing</h2>
+
+<p>Bug reports and pull requests are welcome on GitHub at https://github.com/thelehhman/texture. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the <a href="http://contributor-covenant.org">Contributor Covenant</a> code of conduct.</p>
+
+<h2 id="development">Development</h2>
+
+<p>To set up your environment to develop this theme, run <code class="language-plaintext highlighter-rouge">bundle install</code>.</p>
+
+<p>Your theme is setup just like a normal Jekyll site! To test your theme, run <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code> and open your browser at <code class="language-plaintext highlighter-rouge">http://localhost:4000</code>. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme’s contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.</p>
+
+<p>When your theme is released, only the files in <code class="language-plaintext highlighter-rouge">_layouts</code>, <code class="language-plaintext highlighter-rouge">_includes</code>, <code class="language-plaintext highlighter-rouge">_sass</code> and <code class="language-plaintext highlighter-rouge">assets</code> tracked with Git will be bundled.
+To add a custom directory to your theme-gem, please edit the regexp in <code class="language-plaintext highlighter-rouge">texture.gemspec</code> accordingly.</p>
+
+<h2 id="donation">Donation</h2>
+<p>If this project help you reduce time to develop, you can give me a cup of coffee :)</p>
+
+<p><a href="https://paypal.me/thelehhman"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" alt="paypal" /></a></p>
+
+<h2 id="license">License</h2>
+
+<p>The theme is available as open source under the terms of the <a href="https://opensource.org/licenses/MIT">MIT License</a>.</p>
+
+<h2 id="more-themes">More Themes</h2>
+<p><a href="https://github.com/thelehhman/plainwhite-jekyll">plainwhite</a></p>
+
+<h2 id="inserting-code">Inserting Code</h2>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">express</span><span class="dl">'</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">()</span>
+ 
+<span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello World</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">})</span>
+ 
+<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">body</span> <span class="p">{</span>
+	<span class="nl">font-family</span><span class="p">:</span> <span class="s1">'Nunito Sans'</span><span class="o">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+	<span class="nl">line-height</span><span class="p">:</span> <span class="m">1</span><span class="mi">.5em</span><span class="p">;</span>
+	<span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+	<span class="na">-webkit-font-smoothing</span><span class="p">:</span> <span class="n">antialiased</span><span class="p">;</span>
+	<span class="na">-moz-osx-font-smoothing</span><span class="p">:</span> <span class="n">grayscale</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+:ET

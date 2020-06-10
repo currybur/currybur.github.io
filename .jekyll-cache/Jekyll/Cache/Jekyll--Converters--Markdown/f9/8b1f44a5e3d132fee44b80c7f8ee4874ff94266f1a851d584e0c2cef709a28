@@ -1,0 +1,250 @@
+I"�<head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+
+<h1 id="考前抱佛脚之quiz大学习">考前抱佛脚之quiz大学习</h1>
+<p><strong>考后：水了水了</strong>
+***</p>
+
+<h1 id="神经网络">神经网络</h1>
+<h3 id="正则化">正则化</h3>
+<ol>
+  <li>weight decay</li>
+  <li>早停</li>
+  <li>invariance
+    <ol>
+      <li>数据增强</li>
+      <li>tangent propagation</li>
+      <li>特征提取时保持不变性</li>
+      <li>在网络中加入不变性结构</li>
+    </ol>
+  </li>
+</ol>
+
+<p>CNN的正则化要素$\sim$无限强先验</p>
+<ol>
+  <li>局部感受野</li>
+  <li>权值共享，平移不变性</li>
+  <li>下采样</li>
+</ol>
+
+<p>RNN：memory cell</p>
+
+<h1 id="聚类">聚类</h1>
+
+<p>关键问题</p>
+<ul>
+  <li>如何定义cluster</li>
+  <li>如何关联样本点</li>
+  <li>如何表征数据</li>
+  <li>多少个cluster</li>
+  <li>如何分组（算法）</li>
+</ul>
+
+<h2 id="距离">距离</h2>
+<blockquote>
+  <p>$D(A,B)=D(B,A)$
+$D(A,A)=0$<br />
+$D(A,B)=0\lrArr A=B$
+$D(A,B)\leq D(A,C)+D(C,B)$</p>
+</blockquote>
+
+<h4 id="衡量聚类好坏内部外部标准">衡量聚类好坏：内部/外部标准</h4>
+<ol>
+  <li>内部标准：依赖数据表征和相似度定义</li>
+  <li>基于金标准（golden standard）数据，如纯度$\frac{1}{n_i}max_j{n_{ij}},j\in C$，即cluster中数量最多的一类标签占比</li>
+</ol>
+
+<h2 id="算法">算法</h2>
+<h4 id="1-层次化">1. 层次化：</h4>
+<ol>
+  <li>自上而下</li>
+  <li>自下而上</li>
+</ol>
+
+<h5 id="衡量cluster间距">衡量cluster间距：</h5>
+<ol>
+  <li>Single link 最近两点</li>
+  <li>Complete link 最远两点</li>
+  <li>Centroid 中心两点</li>
+  <li>Average 所有点平均</li>
+</ol>
+
+<p>优点：简单，不需要提前定义cluster数，层次关系易于解释
+缺点：时间复杂度高$O(n^2logn)\to O(n^3)$，噪声敏感，可能聚成链状的树</p>
+
+<h4 id="2-基于划分">2. 基于划分</h4>
+<ul>
+  <li>需要给定超参数K</li>
+  <li>Goodness measure: $SD_{K_i}$ 平方距离</li>
+  <li>复杂度：$O(LKnm)$,L:iter, K:cluster, n:样本量，m：维数</li>
+  <li>种子选择：初始化类中心
+    <ul>
+      <li>优化：启发式选择；多试几次</li>
+    </ul>
+  </li>
+</ul>
+
+<p>优点：简单，快，对凸的数据很合适<br />
+缺点：K不好选，对种子敏感，噪声敏感，非凸不行</p>
+
+<h4 id="3-基于密度">3. 基于密度</h4>
+<p><strong>DBSCAN</strong></p>
+<ul>
+  <li>中心点：在$\epsilon$范围内点数$&gt;MinPts$</li>
+  <li>边界点：在中心点范围内</li>
+  <li>噪声点：其他</li>
+  <li>直接密度可达，密度可达，密度连通</li>
+  <li>选择MinPts、$\epsilon$：以第k近作为阈值</li>
+</ul>
+
+<p>优点：可划分任意形状的cluster，可处理噪声，一次扫描快，不需要选K</p>
+<ul>
+  <li>时间复杂度$O(n^2)$，空间复杂度$O(n)$</li>
+</ul>
+
+<p>缺点：无法应对变化的密度；高维数据稀疏不好识别密度；对$\epsilon$，MinPts敏感。</p>
+
+<h4 id="4-谱聚类">4. 谱聚类</h4>
+<p><strong>连通性而非聚集性</strong></p>
+<ul>
+  <li>相似度矩阵W、度矩阵D，拉普拉斯矩阵$L=D-W$。</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>RatioCut：$\sum_{i=1}^k\frac{cut(A_i,\bar{A_i})}{</td>
+          <td>A_i</td>
+          <td>}$</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>Ncut：$\sum_{i=1}^k\frac{cut(A_i,\bar{A_i})}{vol(A_i)},vol(A_i)=\sum_{j\in A_i}d_i$</li>
+  <li>谱聚类将上述两个NP hard松弛化，Rayleigh-Ritz Theory</li>
+  <li>$min f^TLf,s.t.f^Tf=n,f\perp 1$</li>
+</ul>
+
+<p>优点：适用于高维问题（相当于将$n\times n$降维到$n\times k$即k个特征向量），可解决非凸<br />
+缺点：对参数敏感，不能解决大数据量，不均衡的数据不行，对相似度定义和k选择敏感</p>
+
+<h1 id="降维">降维</h1>
+<h3 id="pca最大方差方向">PCA：最大方差方向</h3>
+<blockquote>
+  <p>$XX^Tv=\lambda v$</p>
+</blockquote>
+
+<p>优点：特征向量，无需调参，没有局部最优</p>
+
+<p>缺点：局限于二阶统计量（协方差），线性投影</p>
+
+<h4 id="kernel-pca">kernel PCA</h4>
+
+<h3 id="ica">ICA</h3>
+<p>独立和不相关</p>
+
+<p>准则：非高斯性</p>
+<ul>
+  <li>峭度：对outlier敏感</li>
+  <li>负熵</li>
+  <li>负熵的近似</li>
+</ul>
+
+<h5 id="fast-ica">Fast ICA</h5>
+<ol>
+  <li>预处理：中心化，白化</li>
+  <li>fast ICA algo：最大化非高斯性</li>
+  <li>解混</li>
+</ol>
+
+<p>优点：不需要步长，不像基于梯度的ICA</p>
+
+<p>LDA、PCA、ICA的联系和区别</p>
+
+<h1 id="em算法框架">EM<code class="language-plaintext highlighter-rouge">算法框架</code></h1>
+<p>隐变量的三种情况</p>
+<ol>
+  <li>数据本来不存在，假设有</li>
+  <li>不可能被测量</li>
+  <li>测不准</li>
+</ol>
+
+<ul>
+  <li>硬指派：不同cluster可能有overlap</li>
+  <li>软指派：</li>
+</ul>
+
+<p>K-means是固定$\Sigma$为单位矩阵的EM for GMM。</p>
+
+<blockquote>
+  <p>$inference\lrarr fully observed$<br />
+$\dArr$
+E-step估计隐变量$\lrarr$M-step用MLE、MAP根据估计出来的complete data更新参数</p>
+</blockquote>
+
+<p>思考题：</p>
+<ul>
+  <li>
+    <p>complete likelihood, incomplete likelihood, expected complete likelihood$&lt;Z_m^k&gt;$，incomplete求解不好操作，发现expected是incomplete的下界，所以max exp即max inc。</p>
+  </li>
+  <li>
+    <p>GMM和GDA的区别？</p>
+  </li>
+</ul>
+
+<h1 id="hmm">HMM</h1>
+<p>三大任务</p>
+<ol>
+  <li>evaluation</li>
+  <li>decoding</li>
+  <li>learning</li>
+</ol>
+
+<h3 id="evaluation">Evaluation</h3>
+<p>前向$\alpha_t^k=P(x_t|y_t^k=1)\sum_i\alpha_{t-1}^ia_{i,k},where a是转移概率$</p>
+<h3 id="decoding">Decoding</h3>
+<h5 id="单个时间点py_tx">单个时间点$P(y_t|X)$</h5>
+<p>Forward-Backward，$\beta_t^k=\sum_ia_{k,i}P(X_{t+1}|y_{t+1}^i=1)\beta_{t+1}^i$</p>
+<h5 id="py_1y_tx">$P(y_1,…,y_T|X)$</h5>
+<p>Veterbi decoding, 动态规划思想</p>
+<h3 id="learning">Learning</h3>
+<p>Baum-Weilch</p>
+
+<h1 id="图模型">图模型</h1>
+<p>有向图=贝叶斯网络<br />
+无向图=马尔可夫随机场<br />
+马尔可夫坦（？：父、子、coparent</p>
+
+<h3 id="d-separation">D-separation</h3>
+
+<h3 id="马尔可夫场中的条件独立性">马尔可夫场中的条件独立性</h3>
+
+<h3 id="inference--learning">Inference &amp; Learning</h3>
+<p>Query 1. Likelihood
+Query 2. 条件概率
+Query 3. MPA最大可能性指派</p>
+
+<h3 id="inference-algo">Inference Algo.</h3>
+<ul>
+  <li>Variable Elimination
+  eg. 在HMM中，从左开始和从又开始对应了前向和后向</li>
+  <li>信念传播算法
+    <ul>
+      <li>Elimination Cliques</li>
+    </ul>
+  </li>
+  <li>Junction Tree
+    <ul>
+      <li>Clique tree</li>
+    </ul>
+  </li>
+</ul>
+:ET
