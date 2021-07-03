@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Python Visualization with Folium"
+title:  "win10手动添加程序到右键菜单"
 description: 搬砖画了一些图
 date: 2021-04-06 14:08:55
 ---
