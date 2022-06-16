@@ -19,23 +19,26 @@
                 <div class="portrait"></div>
                 <div class="remodal remodal-img" data-remodal-id="portrait-modal">
                     <h3>请输入图片URL地址：</h3>
-                    <br/>
+                    <br />
                     <input type="text" id="avatar-url">
                     <button data-remodal-action="confirm" class="remodal-confirm">确定</button>
                 </div>
-                <h1 id="username" >王孝诚</h1>
-                <h4 id="persona-tag" >Python / 数据挖掘 / 推荐算法</h4>
+                <h1 id="username">王孝诚</h1>
+                <h4 id="persona-tag">Python / 数据挖掘 / 推荐算法</h4>
             </div>
             <div class="profile info-unit">
                 <h2 class="info-header"><i class="iconfont icon-person"></i> <span class="info-title">基本信息</span></h2>
                 <hr>
                 <ul class="info-list">
                     <li>
-                        <label class="left-label">学历</label><span class="label-value">本科</span></li>
+                        <label class="left-label">学历</label><span class="label-value">本科</span>
+                    </li>
                     <li>
-                        <label class="left-label">毕业院校</label><span class="label-value">上海交通大学</span></li>
+                        <label class="left-label">毕业院校</label><span class="label-value">上海交通大学</span>
+                    </li>
                     <li>
-                        <label class="left-label">毕业年份</label><span class="label-value">2021</span></li>
+                        <label class="left-label">毕业年份</label><span class="label-value">2021</span>
+                    </li>
                 </ul>
             </div>
             <div class="contact info-unit">
@@ -43,11 +46,14 @@
                 <hr>
                 <ul class="info-list">
                     <li>
-                        <label class="left-label">邮箱</label><span class="label-value">gakkijam@gmail.com</span></li>
+                        <label class="left-label">邮箱</label><span class="label-value">gakkijam@gmail.com</span>
+                    </li>
                     <li>
-                        <label class="left-label">个人主页</label><span class="label-value">currybur.github.io</span></li>
+                        <label class="left-label">个人主页</label><span class="label-value">currybur.github.io</span>
+                    </li>
                     <li>
-                        <label class="left-label">Github</label><span class="label-value">github.com/currybur</span></li>
+                        <label class="left-label">Github</label><span class="label-value">github.com/currybur</span>
+                    </li>
                 </ul>
             </div>
             <div class="skill info-unit">
@@ -70,14 +76,15 @@
             </div>
             <div class="remodal remodal-img" data-remodal-id="weixin-modal">
                 <h3>请输入图片URL地址：</h3>
-                <br/>
+                <br />
                 <input type="text" id="weixin-url">
                 <button data-remodal-action="confirm" class="remodal-confirm">确定</button>
             </div>
         </div>
         <div class="main">
             <div class="education info-unit right-list">
-                <h2 class="info-header"><i class="iconfont icon-education"></i> <span class="info-title">教育经历</span></h2>
+                <h2 class="info-header"><i class="iconfont icon-education"></i> <span class="info-title">教育经历</span>
+                </h2>
                 <hr>
                 <ul class="experience-list">
                     <li>
@@ -93,14 +100,14 @@
                 <h2 class="info-header"><i class="iconfont icon-project"></i> <span class="info-title">项目经历</span></h2>
                 <hr>
                 <ul class="experience-list">
-                    <li>
+                    <!-- <li>
                         <h3>面向基于位置社交网络的兴趣点推荐（本科毕设）</h3>
                         <p>
                             基于位置社交网络中大量的用户签到数据激发了向用户推荐兴趣点的需求。为了利用到数据集中用户签到序列和用户社交关系，提出了一个新颖的兴趣点推荐模型GGTCN。在序列建模部分，
                             模型使用了带有门控机制的时序卷积网络来代替循环神经网络，从签到数据捕获用户兴趣点偏好；在社交关系部分，基于数据集中的社交网络图，利用图卷积网络来抓取和整
                             合用户在社交网络图上邻域的兴趣点偏好信息。
                         </p>
-                    </li>
+                    </li> -->
                     <li>
                         <h3>基于大数据的智慧医疗</h3>
                         <p>
@@ -116,7 +123,8 @@
                     <li>
                         <h3>卷积神经网络的类适应剪枝</h3>
                         <p>
-                            深度卷积神经网络结构中往往有大量冗余，希望根据具体使用场景中实际需要的目标类别对网络剪枝。首先使用Activation Maximization算法生成了CNN不同层次的卷积核的AM图，通过K-means对他们进行聚类；接着计算不同类别标签对各个卷积核的梯度，获得前期聚类好的卷积核的相应类别标签，从而获得对各个类别标签贡献最大的卷积核排名。最后可以根据应用场景去除不需要的类别标签对应的卷积核，减小CNN的规模，提高推理速度同时极小地损失准确率。
+                            深度卷积神经网络结构中往往有大量冗余，希望根据具体使用场景中实际需要的目标类别对网络剪枝。首先使用Activation
+                            Maximization算法生成了CNN不同层次的卷积核的AM图，通过K-means对他们进行聚类；接着计算不同类别标签对各个卷积核的梯度，获得前期聚类好的卷积核的相应类别标签，从而获得对各个类别标签贡献最大的卷积核排名。最后可以根据应用场景去除不需要的类别标签对应的卷积核，减小CNN的规模，提高推理速度同时极小地损失准确率。
                         </p>
                     </li>
                 </ul>
@@ -127,16 +135,16 @@
                 <ul class="experience-list">
                     <li>
                         <h3>上海交大学业优秀奖学金</h3>
-                    </li> 
+                    </li>
                     <li>
                         <h3>上海交大“体总杯”排球比赛冠军</h3>
-                    </li> 
+                    </li>
                     <li>
                         <h3>普通话水平测试二级甲等</h3>
-                    </li>                     
+                    </li>
                     <li>
                         <h3>曾于B站动态转发抽奖中获得一年大会员</h3>
-                    </li>                     
+                    </li>
             </div>
             <div class="aboutme info-unit right-paragraph">
                 <h2 class="info-header"><i class="iconfont icon-flower"></i> <span class="info-title">自我评价</span></h2>
